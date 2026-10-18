@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fil">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resources — E-Cycle</title>
+  <title>Mga Mapagkukunan — E-Cycle</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -54,7 +54,7 @@
       background-size: 40px 40px;
     }
     .hero-strip::after {
-      content: 'RESOURCES';
+      content: 'SANGGUNIAN';
       position: absolute;
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(5rem, 12vw, 10rem);
@@ -94,17 +94,15 @@
     /* CONTENT */
     .content { max-width: 1100px; margin: 0 auto; padding: 3rem 2.5rem 6rem; }
 
-    /* CATEGORY LABEL */
     .cat-label {
       font-size: .68rem; letter-spacing: .2em;
       text-transform: uppercase; color: var(--teal);
       font-weight: 600; display: flex; align-items: center; gap: .5rem;
       margin-bottom: 1.2rem; margin-top: 3rem;
     }
-    .cat-label:first-child { margin-top: 0; }
+    .cat-group:first-child .cat-label { margin-top: 0; }
     .cat-label::before { content: '//'; opacity: .4; }
 
-    /* RESOURCE GRID */
     .resource-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -141,7 +139,7 @@
     .card-tag.ph    { background: rgba(200,241,53,.1); border: 1px solid rgba(200,241,53,.2); color: var(--lime); }
     .card-tag.global{ background: rgba(0,180,162,.1);  border: 1px solid rgba(0,180,162,.2);  color: var(--teal); }
     .card-tag.law   { background: rgba(255,92,0,.1);   border: 1px solid rgba(255,92,0,.2);   color: var(--orange); }
-    .card-tag.research { background: rgba(200,241,53,.07); border: 1px solid rgba(200,241,53,.15); color: #a8c540; }
+    .card-tag.sdg   { background: rgba(255,92,0,.1);   border: 1px solid rgba(255,92,0,.2);   color: var(--orange); }
 
     .card-arrow { color: var(--muted); font-size: .9rem; transition: color .2s, transform .2s; flex-shrink: 0; }
     .resource-card:hover .card-arrow { color: var(--lime); transform: translate(2px, -2px); }
@@ -151,7 +149,6 @@
       font-size: .92rem; font-weight: 700;
       color: var(--smoke); line-height: 1.35;
       margin-bottom: .5rem;
-      flex: 1;
     }
     .card-desc { font-size: .8rem; color: var(--muted); font-weight: 300; line-height: 1.6; margin-bottom: 1rem; flex: 1; }
     .card-meta { display: flex; align-items: center; gap: .8rem; margin-top: auto; }
@@ -162,11 +159,9 @@
       margin-left: auto;
     }
 
-    /* hidden class for filtering */
     .resource-card.hidden { display: none; }
     .cat-group.hidden { display: none; }
 
-    /* disclaimer */
     .disclaimer {
       margin-top: 4rem;
       border-top: 1px solid var(--border);
@@ -197,53 +192,54 @@
 
   <nav>
     <a href="index.html" class="nav-logo">E<span>-</span>Cycle</a>
-    <a href="index.html" class="nav-back">Back to Campaign</a>
+    <a href="index.html" class="nav-back">Bumalik sa Kampanya</a>
   </nav>
 
   <div class="hero-strip">
     <div class="hero-strip-inner">
-      <div class="page-eyebrow">Knowledge Hub</div>
-      <h1 class="page-title">E-Waste <span>Resources</span></h1>
-      <p class="page-sub">A curated collection of articles, reports, and references on e-waste — from Philippine context to global data.</p>
+      <div class="page-eyebrow">Sentro ng Kaalaman</div>
+      <h1 class="page-title">Mga <span>Mapagkukunan</span> sa E-Waste</h1>
+      <p class="page-sub">Piling koleksyon ng mga artikulo, ulat, at sanggunian tungkol sa e-waste at SDG 12 — mula sa konteksto ng Pilipinas hanggang sa pandaigdigang datos.</p>
     </div>
   </div>
 
-  <!-- FILTER -->
+  <!-- SALAIN -->
   <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">All Resources</button>
-    <button class="filter-btn" data-filter="ph">🇵🇭 Philippines</button>
-    <button class="filter-btn" data-filter="global">🌍 Global</button>
-    <button class="filter-btn" data-filter="law">⚖️ Law & Policy</button>
-    <button class="filter-btn" data-filter="research">📄 Research</button>
+    <button class="filter-btn active" data-filter="all">Lahat</button>
+    <button class="filter-btn" data-filter="ph">🇵🇭 Pilipinas</button>
+    <button class="filter-btn" data-filter="global">🌍 Pandaigdig</button>
+    <button class="filter-btn" data-filter="sdg">🎯 SDG 12</button>
+    <button class="filter-btn" data-filter="law">⚖️ Batas at Patakaran</button>
+    <button class="filter-btn" data-filter="research">📄 Pananaliksik</button>
   </div>
 
   <div class="content">
 
-    <!-- PHILIPPINES -->
+    <!-- PILIPINAS -->
     <div class="cat-group" data-cat="ph">
-      <div class="cat-label">Philippines</div>
+      <div class="cat-label">Pilipinas</div>
       <div class="resource-grid">
 
         <a class="resource-card" href="https://www.philstar.com/headlines/2024/03/26/2343299/philippines-among-top-e-waste-producers-sea" target="_blank" rel="noopener" data-tags="ph">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Philippines Among Top E-Waste Producers in Southeast Asia</div>
-          <div class="card-desc">Reports that the Philippines generated 537 million kg of e-waste in 2022 — 4.7 kg per capita — making it one of the region's largest contributors according to the UN's Global E-Waste Monitor 2024.</div>
+          <div class="card-desc">Ayon sa ulat, nakalikha ang Pilipinas ng 537 milyong kilo ng e-waste noong 2022 — 4.7 kg bawat tao — kaya isa ito sa pinakamalalaking nag-aambag sa rehiyon batay sa Global E-Waste Monitor 2024 ng UN.</div>
           <div class="card-meta">
-            <span class="card-source">Philippine Star</span>
+            <span class="card-source">The Philippine Star</span>
             <span class="card-year">2024</span>
           </div>
         </a>
 
         <a class="resource-card" href="https://bantoxics.org/2024/10/14/iwas-ewaste-infographic/" target="_blank" rel="noopener" data-tags="ph">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
-          <div class="card-title">IWAS E-WASTE: BAN Toxics Infographic for International E-Waste Day</div>
-          <div class="card-desc">A Tagalog IEC material by toxic watchdog BAN Toxics explaining what e-waste is, the dangers it poses, challenges in the Philippines, and practical tips on how Filipinos can reduce e-waste.</div>
+          <div class="card-title">IWAS E-WASTE: Infographic ng BAN Toxics para sa International E-Waste Day</div>
+          <div class="card-desc">Materyal sa Tagalog mula sa BAN Toxics na nagpapaliwanag kung ano ang e-waste, ang panganib nito, ang mga hamon sa Pilipinas, at praktikal na payo kung paano ito mababawasan ng mga Pilipino.</div>
           <div class="card-meta">
             <span class="card-source">BAN Toxics</span>
             <span class="card-year">2024</span>
@@ -252,11 +248,11 @@
 
         <a class="resource-card" href="https://seads.adb.org/articles/transforming-e-waste-wealth" target="_blank" rel="noopener" data-tags="ph">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Transforming E-Waste into Wealth in the Philippines</div>
-          <div class="card-desc">How the Philippines' first community-led e-waste management centers, built under a UNIDO–GEF project, are empowering local communities and creating green jobs from responsible e-waste dismantling.</div>
+          <div class="card-desc">Kung paano nagbibigay-lakas sa mga lokal na komunidad at lumilikha ng mga "green job" ang mga unang community-led na sentro ng pamamahala ng e-waste sa Pilipinas sa ilalim ng proyektong UNIDO–GEF.</div>
           <div class="card-meta">
             <span class="card-source">ADB SEADS / UNIDO</span>
             <span class="card-year">2024</span>
@@ -265,11 +261,11 @@
 
         <a class="resource-card" href="https://www.unido.org/news/philippines-making-money-making-e-waste-safe" target="_blank" rel="noopener" data-tags="ph">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">The Philippines: Making Money Making E-Waste Safe</div>
-          <div class="card-desc">UNIDO's Director General visits a Philippine treatment, storage and disposal (TSD) facility, highlighting e-waste as a source of precious metals and a platform for green jobs and circular economy practice.</div>
+          <div class="card-desc">Dinalaw ng Director General ng UNIDO ang isang pasilidad ng treatment, storage, and disposal (TSD) sa Pilipinas, na nagpapakita ng e-waste bilang mapagkukunan ng mahahalagang metal at daan tungo sa mga green job at circular economy.</div>
           <div class="card-meta">
             <span class="card-source">UNIDO</span>
             <span class="card-year">2022</span>
@@ -278,11 +274,11 @@
 
         <a class="resource-card" href="https://onlinelibrary.wiley.com/doi/10.1111/ejed.70042" target="_blank" rel="noopener" data-tags="ph research">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">E-Waste Management Practices in Selected Public Schools in the Philippines</div>
-          <div class="card-desc">A 2025 qualitative study examining how secondary schools in Sorsogon Province manage e-waste, exploring environmental justice and the role of education in responsible disposal.</div>
+          <div class="card-desc">Kwalitatibong pag-aaral noong 2025 kung paano pinamamahalaan ng mga sekondaryang paaralan sa Sorsogon ang e-waste, at ang papel ng edukasyon sa responsableng pagtatapon.</div>
           <div class="card-meta">
             <span class="card-source">European Journal of Education (Wiley)</span>
             <span class="card-year">2025</span>
@@ -291,11 +287,11 @@
 
         <a class="resource-card" href="https://atr.vsu.edu.ph/article/view/526" target="_blank" rel="noopener" data-tags="ph research law">
           <div class="card-top">
-            <span class="card-tag ph">Philippines</span>
+            <span class="card-tag ph">Pilipinas</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">WEEE Management and Policy Frameworks in the Philippines: A Mini Review</div>
-          <div class="card-desc">A 2025 academic review of waste electrical and electronic equipment (WEEE) management policies in the Philippines, covering regulatory gaps, EPR frameworks, and recommendations for local governments.</div>
+          <div class="card-desc">Akademikong pagsusuri noong 2025 sa mga patakaran sa pamamahala ng waste electrical and electronic equipment (WEEE) sa Pilipinas, kabilang ang mga puwang sa regulasyon, EPR frameworks, at rekomendasyon para sa mga lokal na pamahalaan.</div>
           <div class="card-meta">
             <span class="card-source">Annals of Tropical Research (VSU)</span>
             <span class="card-year">2025</span>
@@ -305,18 +301,18 @@
       </div>
     </div>
 
-    <!-- GLOBAL -->
+    <!-- PANDAIGDIG -->
     <div class="cat-group" data-cat="global">
-      <div class="cat-label">Global Reports & Data</div>
+      <div class="cat-label">Pandaigdigang Ulat at Datos</div>
       <div class="resource-grid">
 
         <a class="resource-card" href="https://ewastemonitor.info/the-global-e-waste-monitor-2024/" target="_blank" rel="noopener" data-tags="global research">
           <div class="card-top">
-            <span class="card-tag global">Global</span>
+            <span class="card-tag global">Pandaigdig</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Global E-Waste Monitor 2024 (ITU / UNITAR)</div>
-          <div class="card-desc">The authoritative UN report on worldwide e-waste generation. Estimates 62 billion kg generated in 2022, with only 22% formally recycled. Includes country-level breakdowns, projections to 2030, and policy recommendations.</div>
+          <div class="card-desc">Ang pangunahing ulat ng UN tungkol sa e-waste sa buong mundo. Tinatayang 62 milyong tonelada ang nalikha noong 2022, at 22.3% lamang ang maayos na na-recycle. Kasama ang datos kada bansa, projection hanggang 2030, at mga rekomendasyon.</div>
           <div class="card-meta">
             <span class="card-source">ITU / UNITAR</span>
             <span class="card-year">2024</span>
@@ -325,11 +321,11 @@
 
         <a class="resource-card" href="https://www.wired.com/story/un-south-east-south-asia-e-waste-environment/" target="_blank" rel="noopener" data-tags="global">
           <div class="card-top">
-            <span class="card-tag global">Global</span>
+            <span class="card-tag global">Pandaigdig</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Toxic E-Waste in Asia Jumps 63% in Five Years</div>
-          <div class="card-desc">A WIRED article summarising a UN University report on the dramatic rise of e-waste across South and Southeast Asia, driven by rising incomes, falling device prices, and short product lifespans.</div>
+          <div class="card-desc">Artikulo ng WIRED na bumubuod sa ulat ng UN University tungkol sa mabilis na pagtaas ng e-waste sa Timog at Timog-Silangang Asya, dahil sa pagtaas ng kita, pagbaba ng presyo ng mga device, at maikling buhay ng mga produkto.</div>
           <div class="card-meta">
             <span class="card-source">WIRED / UN University</span>
             <span class="card-year">2017</span>
@@ -338,11 +334,11 @@
 
         <a class="resource-card" href="https://www.researchgate.net/publication/226646109_E-waste_issues_and_measures_in_the_Philippines" target="_blank" rel="noopener" data-tags="global research ph">
           <div class="card-top">
-            <span class="card-tag global">Global</span>
+            <span class="card-tag global">Pandaigdig</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">E-Waste Issues and Measures in the Philippines (Springer)</div>
-          <div class="card-desc">A foundational journal paper on the hazardous materials in discarded electronics — lead, mercury, cadmium — and how developing countries like the Philippines face unique challenges in safe disposal and recycling infrastructure.</div>
+          <div class="card-desc">Batayang papel tungkol sa mga mapanganib na materyales sa itinapong elektroniko — lead, mercury, cadmium — at ang mga hamon ng mga umuunlad na bansa tulad ng Pilipinas sa ligtas na pagtatapon at pag-recycle.</div>
           <div class="card-meta">
             <span class="card-source">Journal of Material Cycles & Waste Mgmt.</span>
             <span class="card-year">2006</span>
@@ -352,18 +348,65 @@
       </div>
     </div>
 
-    <!-- LAW & POLICY -->
+    <!-- SDG 12 -->
+    <div class="cat-group" data-cat="sdg">
+      <div class="cat-label">SDG 12 — Responsableng Konsumo at Produksyon</div>
+      <div class="resource-grid">
+
+        <a class="resource-card" href="https://sdgs.un.org/goals/goal12" target="_blank" rel="noopener" data-tags="sdg global">
+          <div class="card-top">
+            <span class="card-tag sdg">SDG 12</span>
+            <span class="card-arrow">↗</span>
+          </div>
+          <div class="card-title">Goal 12: Ensure Sustainable Consumption and Production Patterns</div>
+          <div class="card-desc">Opisyal na pahina ng United Nations para sa SDG 12, kasama ang lahat ng target (12.1 hanggang 12.c) at ang mga indicator nito.</div>
+          <div class="card-meta">
+            <span class="card-source">United Nations</span>
+            <span class="card-year">UN</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://unstats.un.org/sdgs/report/2025/Goal-12/" target="_blank" rel="noopener" data-tags="sdg global research">
+          <div class="card-top">
+            <span class="card-tag sdg">SDG 12</span>
+            <span class="card-arrow">↗</span>
+          </div>
+          <div class="card-title">The Sustainable Development Goals Report 2025: Goal 12</div>
+          <div class="card-desc">Pinakabagong ulat ng UN Statistics Division sa progreso ng mundo tungo sa responsableng konsumo at produksyon.</div>
+          <div class="card-meta">
+            <span class="card-source">UN Statistics Division</span>
+            <span class="card-year">2025</span>
+          </div>
+        </a>
+
+        <a class="resource-card" href="https://www.unep.org/resources/publication/food-waste-index-report-2024" target="_blank" rel="noopener" data-tags="sdg global research">
+          <div class="card-top">
+            <span class="card-tag sdg">SDG 12</span>
+            <span class="card-arrow">↗</span>
+          </div>
+          <div class="card-title">Food Waste Index Report 2024</div>
+          <div class="card-desc">Ulat ng UNEP tungkol sa aksaya sa pagkain sa buong mundo, kaugnay ng Target 12.3 ng SDG 12.</div>
+          <div class="card-meta">
+            <span class="card-source">UNEP</span>
+            <span class="card-year">2024</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- BATAS AT PATAKARAN -->
     <div class="cat-group" data-cat="law">
-      <div class="cat-label">Law & Policy</div>
+      <div class="cat-label">Batas at Patakaran</div>
       <div class="resource-grid">
 
         <a class="resource-card" href="https://emb.gov.ph/wp-content/uploads/2023/02/TSD-as-of-January-31-2023.pdf" target="_blank" rel="noopener" data-tags="law ph">
           <div class="card-top">
-            <span class="card-tag law">Law & Policy</span>
+            <span class="card-tag law">Batas at Patakaran</span>
             <span class="card-arrow">↗</span>
           </div>
-          <div class="card-title">DENR-EMB List of Registered TSD Facilities (E-Waste / M506)</div>
-          <div class="card-desc">The official government list of Treatment, Storage, and Disposal (TSD) facilities registered to handle e-waste (M506 waste) in the Philippines, as maintained by the Department of Environment and Natural Resources.</div>
+          <div class="card-title">Listahan ng DENR-EMB ng mga Rehistradong TSD Facility (E-Waste / M506)</div>
+          <div class="card-desc">Opisyal na listahan ng pamahalaan ng mga pasilidad ng Treatment, Storage, and Disposal (TSD) na rehistradong humawak ng e-waste (M506 waste) sa Pilipinas, na pinananatili ng Department of Environment and Natural Resources.</div>
           <div class="card-meta">
             <span class="card-source">DENR – Environmental Management Bureau</span>
             <span class="card-year">2023</span>
@@ -372,11 +415,11 @@
 
         <a class="resource-card" href="https://mb.com.ph/2020/10/13/eco-groups-urge-government-to-ban-importation-of-e-waste" target="_blank" rel="noopener" data-tags="law ph">
           <div class="card-top">
-            <span class="card-tag law">Law & Policy</span>
+            <span class="card-tag law">Batas at Patakaran</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Eco Groups Urge Government to Ban Importation of E-Waste</div>
-          <div class="card-desc">Environmental groups call on the Philippine government to strictly enforce bans on imported e-waste following cases of illegal dumping from Canada, South Korea, Hong Kong, and Australia.</div>
+          <div class="card-desc">Nanawagan ang mga grupong pangkalikasan sa pamahalaan na mahigpit na ipatupad ang pagbabawal sa pag-angkat ng e-waste kasunod ng mga kaso ng ilegal na pagtatapon mula sa Canada, South Korea, Hong Kong, at Australia.</div>
           <div class="card-meta">
             <span class="card-source">Manila Bulletin</span>
             <span class="card-year">2020</span>
@@ -385,11 +428,11 @@
 
         <a class="resource-card" href="https://ejournals.ph/article.php?id=25145" target="_blank" rel="noopener" data-tags="law ph research">
           <div class="card-top">
-            <span class="card-tag law">Law & Policy</span>
+            <span class="card-tag law">Batas at Patakaran</span>
             <span class="card-arrow">↗</span>
           </div>
           <div class="card-title">Toward Sustainable E-Waste Management: Insights from General Santos City</div>
-          <div class="card-desc">A mixed-method study on consumer disposal behaviors in General Santos City using the KAP model, with policy recommendations for local ordinances, EPR frameworks, and Material Recovery Facility integration.</div>
+          <div class="card-desc">Mixed-method na pag-aaral sa gawi ng mga mamimili sa pagtatapon ng e-waste sa General Santos City gamit ang KAP model, may mga rekomendasyon para sa lokal na ordinansa, EPR frameworks, at integrasyon ng Material Recovery Facility.</div>
           <div class="card-meta">
             <span class="card-source">Philippine EJournals</span>
             <span class="card-year">2024</span>
@@ -400,7 +443,7 @@
     </div>
 
     <div class="disclaimer">
-      <strong>About these resources:</strong> All links lead to publicly accessible external sources — academic journals, government agencies, news outlets, and UN bodies. E-Cycle does not host or own any of these materials. Links are provided for educational purposes only and were last verified in May 2026.
+      <strong>Tungkol sa mga sanggunian:</strong> Ang lahat ng link ay patungo sa mga pampublikong panlabas na sanggunian — mga akademikong journal, ahensya ng pamahalaan, mga pahayagan, at mga organisasyon ng UN. Hindi nagho-host o nagmamay-ari ng alinman sa mga materyal na ito ang E-Cycle. Ibinibigay ang mga link para sa layuning pang-edukasyon lamang at huling nasuri noong Mayo 2026.
     </div>
 
   </div>
@@ -423,13 +466,11 @@
           return;
         }
 
-        // Show/hide individual cards
         cards.forEach(card => {
           const tags = (card.dataset.tags || '').split(' ');
           card.classList.toggle('hidden', !tags.includes(filter));
         });
 
-        // Hide empty groups
         groups.forEach(group => {
           const visible = group.querySelectorAll('.resource-card:not(.hidden)');
           group.classList.toggle('hidden', visible.length === 0);
